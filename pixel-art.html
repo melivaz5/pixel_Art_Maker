@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="pixel-art.js"></script>
+    <link rel="stylesheet" href="pixel-art.css">
+</head>
+<body>
+    <h1>Pixel Art Maker</h1>
+        <div class="container">
+        <div class="wrapper">
+        <div class="box">
+            <h3>Elije un tamaño de trabajo</h3>
+
+                <form class="size-picker">
+                    Altura:
+                    <input type="number" id="input-height" name="Altura" min="1" max="50" value="16">
+                <br><br>
+                    Ancho:
+                    <input type="number" id="input-width" name="Ancho" min="1" max="50" value="16">
+                    <div>
+                <br>
+                    <input type="submit" class="submit-button" value="Confirmar">
+                    </div>
+                </form>
+
+            <h3>Selección de color</h3>
+            <div class="colorPicker">
+                <input type="color" id="color-picker" value="#C6426E" onchange="cambiarColor()"/>
+                <br><br>
+                <input type="button" class="quick-fill" value="Llenar">
+                <input type="button" class="erase" value="Borrar">
+                <input type="button" class="clearGrid" value="Borrar Todo">
+            </div>
+        </div>
+        </div>
+        </div>
+
+        <div class="contenedorCanvas">
+            <canvas id="canvas1" width="600" height="420"></canvas>
+        </div>
+
+</body>
+</html>
