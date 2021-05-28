@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <!-- Ensures proper rendering and touch zooming -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Pixel Art Maker</title>
+    <link rel="icon" href="../img/favicon.ico">
+    <link rel="icon" href="../img/favicon-32.png" sizes="32x32">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Helvetica">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=VT323">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div class="mobile-message">
+      <p>Sorry, the Pixel Art Maker is compatible with desktop only. Please come back when you're at a computer.</p>
+    </div>
+    <div class="row">
+      <div class="column">
+        <div class="inputs">
+          <h4>choose grid size</h4>
+          <!-- Class names all lower case and delimited with hyphens per Udacity Frontend Nanodegree Style Guide (CSS page) -->
+          <form class="size-picker">
+            height:
+            <input type="number" class="input-height" name="height" min="1" max="50" value="25">
+            <br><br>
+            width:
+            <input type="number" class="input-width" name="width" min="1" max="50" value="25">
+            <div>
+              <input type="submit" class="submit-button" value="submit"><i class="fas fa-redo"></i>
+            </div>
+          </form>
+          <h4>select color</h4>
+          <input type="color" class="color-picker" value="#C6426E">
+          <input type="button" class="quick-fill" value="fill">
+          <h4>mode</h4>
+          <input type="button" class="erase-mode" value="erase">
+          <p><em>or double-click to erase</em></p>
+          <input type="button" class="draw-mode" value="draw">
+        </div>
+      </div>
+      <div class="column">
+        <h1>Pixel Art Maker</h1>
+        <table class="pixel-canvas"></table>
+        <br>
+      </div>
+    </div>
+    <!-- Since script tag is at the end of body, $(document).ready() not required in JavaScript sheet. (If it were instead placed in head, it would be needed) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="designs.js"></script>
+  </body>
+</html>
