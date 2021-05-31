@@ -61,3 +61,6 @@ h3{
     cursor: pointer;
 }
 
+#canvas1 {
+    border: 2px solid rgb(71, 71, 71);
+}

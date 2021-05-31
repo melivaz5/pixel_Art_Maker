@@ -32,11 +32,12 @@ window.onload = function() {
     var canvas = document.getElementById("canvas1");
     var contenedor = document.getElementById("container");
     var cuadritos = [];
-    var sizeCuadro = { ancho: 16, alto: 16 };
+    var sizeCuadro = { ancho: 38, alto: 38 };
     var color = "";
     var inputColor = document.getElementById("color-picker");
     var inputHeight = document.getElementById("input-height");
     var inputWeight = document.getElementById("input-width");
+    var botonDescarga = document.getElementById("botonDescarga");
   
     if (canvas && canvas.getContext) {
       var ctx = canvas.getContext("2d");
@@ -107,11 +108,11 @@ window.onload = function() {
         canvas.onmousedown = function() {
           mouse = true;
         };
-  
-        canvas.onmouseup = function() {
+
+        document.onmouseup = function() {
           mouse = false;
         };
-  
+
         inputHeight.addEventListener(
           "change",
           function() {
@@ -137,8 +138,16 @@ window.onload = function() {
           false
         );
 
+        botonDescarga.addEventListener(
+          "click",
+          function() {
+            botonDescarga.href = canvas.toDataURL();
+            botonDescarga.download = "mypainting.png";
+          },
+          false
+        );
 
-        canvas.width = container.offsetWidth - 400;
+        //   canvas.width = contenedor.offsetWidth - 400;    //
         dibujaGrid(sizeCuadro.ancho, sizeCuadro.alto, 1, "#44414B");
       } else {
         alert("No se pudo cargar el contexto");
