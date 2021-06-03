@@ -1,31 +1,22 @@
 /*
-
-$('."submit-button').on('click', function makeGrid(event) {
+$(".submit-button").on('click', function makeGrid(event) {
   // prevent page refreshing when clicking submit
   event.preventDefault();
-  let mouseIsDown = false;
-  let rows = userHeight.val();
-  let columns = userWidth.val();
-
-  grid.children().remove(); // delete any previous table rows
-
-
-
-
-
-
-  const userHeight = $('#inputHeight');
-  const userWidth = $('#inputWidth');
-  const displayHeight = $('#gridHeightDisplay');
-  const displayWidth = $('#gridWidthDisplay');
-
+}
+);
 */
 
 
 
+/*
+$(".submit-button").on('click', function makeGrid(event) {
+event.preventDefault();
+let mouseIsDown = false;
 
-
-
+grid.children().remove();
+}
+);
+*/
 
 window.onload = function() {
     var mouse = false;
@@ -38,6 +29,11 @@ window.onload = function() {
     var inputHeight = document.getElementById("input-height");
     var inputWeight = document.getElementById("input-width");
     var botonDescarga = document.getElementById("botonDescarga");
+    var botonBorrarTodo = document.getElementById("clearGrid");
+    var botonBorrar = document.getElementById("erase");
+    var llenar = document.getElementById("quick-fill");
+    
+    var ctx = canvas.getContext("2d");
   
     if (canvas && canvas.getContext) {
       var ctx = canvas.getContext("2d");
@@ -92,7 +88,7 @@ window.onload = function() {
           }
           dibujaGrid(sizeCuadro.ancho, sizeCuadro.alto, 0.4, "#44414B");
         }
-  
+
         canvas.onmousemove = function(e) {
           if (mouse) {
             var canvaspos = canvas.getBoundingClientRect();
@@ -138,6 +134,7 @@ window.onload = function() {
           false
         );
 
+
         botonDescarga.addEventListener(
           "click",
           function() {
@@ -147,6 +144,36 @@ window.onload = function() {
           false
         );
 
+       
+        botonBorrarTodo.addEventListener(
+          "click",
+          function() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            dibujaGrid(sizeCuadro.ancho, sizeCuadro.alto, 1, "#44414B");
+          },
+          false
+        );
+
+        llenar.addEventListener(
+          "click",
+          function(e) {
+            ctx.fillStyle = inputColor;
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            dibujaGrid(sizeCuadro.ancho, sizeCuadro.alto, 1, "#44414B");
+          },
+          false
+        );
+
+/*
+        botonBorrar.addEventListener(
+          "click",
+          function() {
+
+          },
+          false
+        );
+
+*/
         //   canvas.width = contenedor.offsetWidth - 400;    //
         dibujaGrid(sizeCuadro.ancho, sizeCuadro.alto, 1, "#44414B");
       } else {
