@@ -20,6 +20,7 @@ grid.children().remove();
 
 window.onload = function() {
     var mouse = false;
+    var borrando = false;
     var canvas = document.getElementById("canvas1");
     var contenedor = document.getElementById("container");
     var cuadritos = [];
@@ -31,7 +32,9 @@ window.onload = function() {
     var botonDescarga = document.getElementById("botonDescarga");
     var botonBorrarTodo = document.getElementById("clearGrid");
     var botonBorrar = document.getElementById("erase");
-    var llenar = document.getElementById("quick-fill");
+    var botonDibujar = document.getElementById("draw");
+    var botonLlenar = document.getElementById("quick-fill");
+
     
     var ctx = canvas.getContext("2d");
   
@@ -68,7 +71,13 @@ window.onload = function() {
   
         function fillCell(x, y) {
           color = inputColor.value;
+
+          if (borrando === true) {
+            color = "#FFFFFF" ;
+          }
+
           ctx.fillStyle = color;
+
           for (i = 0; i < cuadritos.length; i++) {
             var cuadro = cuadritos[i];
             if (
@@ -154,26 +163,33 @@ window.onload = function() {
           false
         );
 
-        llenar.addEventListener(
+        botonLlenar.addEventListener(
           "click",
           function(e) {
-            ctx.fillStyle = inputColor;
+            ctx.fillStyle = inputColor.value;
             ctx.fillRect(0, 0, canvas.width, canvas.height);
             dibujaGrid(sizeCuadro.ancho, sizeCuadro.alto, 1, "#44414B");
           },
           false
         );
 
-/*
-        botonBorrar.addEventListener(
+        botonDibujar.addEventListener(
           "click",
           function() {
-
+            borrando = false;
           },
           false
         );
 
-*/
+        botonBorrar.addEventListener(
+          "click",
+          function() {
+            borrando = true;
+          },
+          false
+        );
+
+
         //   canvas.width = contenedor.offsetWidth - 400;    //
         dibujaGrid(sizeCuadro.ancho, sizeCuadro.alto, 1, "#44414B");
       } else {
