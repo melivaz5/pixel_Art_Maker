@@ -9,54 +9,50 @@
     <link rel="stylesheet" href="pixel-art.css">
 </head>
 <body>
+    <div>
+        <h1>Pixel Art Maker</h1>
+    </div>
+
     <div class="container">
 
-        <h1>Pixel Art Maker</h1>
+        <aside>
 
-    <div class="flex-grid">
-            <aside class="col sidebar"></aside>
-
-        <div class="box">
-            <h3>Elije un tamaño de trabajo</h3>
-
-                <form class="size-picker">
-                    Altura:
-                    <input type="number" id="input-height" name="Altura" min="1" max="50" value="16">
-                <br><br>
-                    Ancho:
-                    <input type="number" id="input-width" name="Ancho" min="1" max="50" value="16">
-                    <div>
-                <br>
-                    <input type="submit" class="submit-button" value="Confirmar">
-                    </div>
-                </form>
+            <form id="formulario">
+                <input type="hidden" id="canvasImage">
+            </form>
 
             <h3>Selección de color</h3>
             <div class="colorPicker">
-                <input type="color" id="color-picker" value="#C6426E" />
-                <input type="button" id="draw" value="Dibujar">
-                <input type="button" id="erase" value="Borrar">
-
-                <br><br>
-                
-                <input type="button" id="quick-fill" value="Llenar">
-                <input type="button" id="clearGrid" value="Borrar Todo">
+                    <input type="color" id="color-picker" value="#C6426E" />
+                <div>
+                    <button id="draw">Dibujar</button>
+                </div>
+                <div>
+                    <button id="erase">Borrar</button>
+                </div>
+                <div>
+                    <button id="quick-fill">Llenar</button>
+                </div>
+                <div>
+                    <input type="button" id="clearGrid" value="Borrar Todo">
+                </div>
             </div>
-
+            <div>
             <a id="botonDescarga">Descargar</a>
-
-        </aside>
-        </div>
-        
-
-        <section class="col main">
-            <div class="contenedorCanvas">
-                <canvas id="canvas1" width="608" height="608"></canvas>
             </div>
+            <div>
+            <button id="submit-button" >Confirmar</button>
+            </div>
+        </aside>
+
+ 
+
+        <section class="main">
+            <canvas id="canvas1" width="608" height="608"></canvas>
         </section>
 
-    </div>
     </div>
     
 </body>
 </html>
+

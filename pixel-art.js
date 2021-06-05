@@ -1,41 +1,24 @@
-/*
-$(".submit-button").on('click', function makeGrid(event) {
-  // prevent page refreshing when clicking submit
-  event.preventDefault();
-}
-);
-*/
 
-
-
-/*
-$(".submit-button").on('click', function makeGrid(event) {
-event.preventDefault();
-let mouseIsDown = false;
-
-grid.children().remove();
-}
-);
-*/
 
 window.onload = function() {
     var mouse = false;
     var borrando = false;
     var canvas = document.getElementById("canvas1");
-    var contenedor = document.getElementById("container");
     var cuadritos = [];
+
+    //   600/38= 16 cuadrados.   
     var sizeCuadro = { ancho: 38, alto: 38 };
     var color = "";
     var inputColor = document.getElementById("color-picker");
-    var inputHeight = document.getElementById("input-height");
-    var inputWeight = document.getElementById("input-width");
     var botonDescarga = document.getElementById("botonDescarga");
     var botonBorrarTodo = document.getElementById("clearGrid");
     var botonBorrar = document.getElementById("erase");
     var botonDibujar = document.getElementById("draw");
     var botonLlenar = document.getElementById("quick-fill");
+    var botonConfirmar = document.getElementById("submit-button");
+    var canvasImage = document.getElementById("canvasImage");
+    var formulario = document.getElementById("formulario");
 
-    
     var ctx = canvas.getContext("2d");
   
     if (canvas && canvas.getContext) {
@@ -118,27 +101,14 @@ window.onload = function() {
           mouse = false;
         };
 
-        inputHeight.addEventListener(
-          "change",
+
+
+        botonConfirmar.addEventListener(
+          "click",
           function() {
-            cuadritos = [];
-            sizeCuadro.ancho = parseInt(inputHeight.value);
-            sizeCuadro.alto = parseInt(this.value);
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            dibujaGrid(sizeCuadro.ancho, sizeCuadro.alto, 1, "#44414B");
-          },
-          false
-        );
-  
-  
-        inputWeight.addEventListener(
-          "change",
-          function() {
-            cuadritos = [];
-            sizeCuadro.ancho = parseInt(this.value);
-            sizeCuadro.alto = parseInt(inputWeight.value);
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            dibujaGrid(sizeCuadro.ancho, sizeCuadro.alto, 1, "#44414B");
+            var imagenActual = canvas.toDataURL();
+            canvasImage.value = imagenActual;
+            formulario.submit();
           },
           false
         );
@@ -190,7 +160,6 @@ window.onload = function() {
         );
 
 
-        //   canvas.width = contenedor.offsetWidth - 400;    //
         dibujaGrid(sizeCuadro.ancho, sizeCuadro.alto, 1, "#44414B");
       } else {
         alert("No se pudo cargar el contexto");
