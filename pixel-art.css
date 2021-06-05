@@ -6,12 +6,30 @@ body{
     background-color: #ececec;
 }
 
+.container {
+    max-width: 960px;
+    margin: auto;
+    font-family: sans-serif;
+    line-height: 1.5;
+ }
 
-.wrapper {
-    display: grid;
-    grid-template-columns: 20% 80%;	
-    padding: 5px;
-    margin: 15px
+.flex-grid {
+    display: flex;
+    margin: auto -1rem 1rem;
+}
+
+.col {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    padding: 1rem;
+  }
+  
+  .sidebar {
+    flex: 1;
+  }
+  
+  .main {
+    flex: 3;
   }
 
 h1{
@@ -48,7 +66,7 @@ h3{
 .colorPicker {
     padding: 10px;
     margin: 15px;
-    text-align: left;
+    text-align: center;
 }
 
 #color-picker {
@@ -65,3 +83,27 @@ h3{
     border: 2px solid rgb(71, 71, 71);
 }
 
+
+#botonDescarga {
+    font-family: sans-serif;
+    font-size: 25px;
+    cursor: pointer;
+
+}
+
+#clearGrid {
+    cursor: pointer;
+}
+
+#erase {
+    cursor: pointer;
+}
+
+#quick-fill {
+    cursor: pointer;
+}
+
+.submit-button {
+    margin-left: 70px;
+    cursor: pointer;
+}
