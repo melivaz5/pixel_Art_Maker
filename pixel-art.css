@@ -15,6 +15,7 @@ body{
 
 .main{
     flex: 1;
+    margin-top: 30px;
 }
 
 aside{
@@ -75,7 +76,21 @@ h3{
 }
 
 #botonDescarga{
+    cursor: pointer;
     font-size: 20px;
     font-weight: 700;
-    color:rgb(15, 121, 121)
+    color:rgb(15, 121, 121);
+}
+
+
+.buttons {
+    margin-top: 0.7em;
+    padding: 5px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+    border: outset;
+    box-shadow: 0 3px rgb(15, 121, 121) (0,0,0,0.69);;
+    -webkit-box-shadow: 4px 3px 7px 1px rgba(0,0,0,0.69);
+    -moz-box-shadow: 4px 3px 7px 1px rgba(0,0,0,0.69);
 }
