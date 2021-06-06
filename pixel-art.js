@@ -54,11 +54,6 @@ window.onload = function() {
   
         function fillCell(x, y) {
           color = inputColor.value;
-
-          if (borrando === true) {
-            color = "#FFFFFF" ;
-          }
-
           ctx.fillStyle = color;
 
           for (i = 0; i < cuadritos.length; i++) {
@@ -69,12 +64,22 @@ window.onload = function() {
               y > cuadro[1] &&
               y < cuadro[1] + cuadro[3]
             ) {
-              ctx.fillRect(
-                cuadro[0],
-                cuadro[1],
-                sizeCuadro.ancho,
-                sizeCuadro.alto
-              );
+              if (borrando === true) {
+                ctx.clearRect(
+                  cuadro[0],
+                  cuadro[1],
+                  sizeCuadro.ancho,
+                  sizeCuadro.alto
+                );
+              } else {
+                ctx.fillRect(
+                  cuadro[0],
+                  cuadro[1],
+                  sizeCuadro.ancho,
+                  sizeCuadro.alto
+                );
+              }
+
               break;
             }
           }
