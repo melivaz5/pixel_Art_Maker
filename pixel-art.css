@@ -1,4 +1,4 @@
-  body{
+body{
     margin: 0;
     padding: 0;
     text-align: center;
@@ -6,14 +6,14 @@
     background-color: #ececec;
 }
 
-.container {
+.container{
     display: flex;
     height: 100%;
     max-width: 960px;
     margin: 0 auto;
  }
 
- .main{
+.main{
     flex: 1;
 }
 
@@ -30,7 +30,7 @@ aside{
 }
 
 h1{
-    font-size: 40px;
+    font-size: 50px;
     color: rgb(8, 185, 185);
     text-align: center;
     font-family: sans-serif, Arial;
@@ -39,28 +39,28 @@ h1{
 }
 
 h3{
-    font-size: 25px;
+    font-size: 30px;
     color: rgb(15, 121, 121);
     text-align: center;
     font-family: sans-serif, Arial;
-    margin: 5px;
+    margin: 25px;
 }
 
 
 
-.size-picker {
+.size-picker{
     padding: 10px;
     margin: 15px;
     text-align: left;
 }
 
-.colorPicker {
+.colorPicker{
     padding: 10px;
     margin: 15px;
     text-align: center;
 }
 
-#color-picker {
+#color-picker{
     border: 1px solid #dcdcdc;
     padding: 0;
     border: none;
@@ -70,7 +70,12 @@ h3{
     cursor: pointer;
 }
 
-#canvas1 {
+#canvas1{
     border: 2px solid rgb(71, 71, 71);
 }
 
+#botonDescarga{
+    font-size: 20px;
+    font-weight: 700;
+    color:rgb(15, 121, 121)
+}
